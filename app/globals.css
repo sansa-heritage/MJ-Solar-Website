@@ -1,26 +1,161 @@
+/* app/globals.css - Updated with full responsiveness */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #f8f6fb;
+  color: #15153d;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* FULLY RESPONSIVE CONTAINER */
+.container-main {
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (min-width: 640px) {
+  .container-main {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 768px) {
+  .container-main {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-main {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* GRADIENT TEXT */
+.gradient-text {
+  background: linear-gradient(135deg, #7b3fe4 0%, #ff8c2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+  background: linear-gradient(135deg, #7b3fe4, #8d54ff);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(123, 63, 228, 0.3);
+}
+
+@media (max-width: 640px) {
+  .primary-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+/* ORANGE BUTTON */
+.orange-btn {
+  background: linear-gradient(135deg, #ff9f43, #ff7a00);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.orange-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(255, 122, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+  .orange-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Responsive Text Utilities */
+.responsive-heading {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .responsive-heading {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-heading {
+    font-size: 44px;
+  }
+}
+
+/* globals.css */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.25s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-in forwards;
 }

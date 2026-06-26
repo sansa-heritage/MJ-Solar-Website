@@ -1,0 +1,26 @@
+{
+  "name": "MAA JOGOMAYA ENERGY",
+  "short_name": "MJ Energy",
+  "description": "Solar Energy Solutions Provider",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#7B3FE4",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
