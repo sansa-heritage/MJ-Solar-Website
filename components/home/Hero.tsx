@@ -1,4 +1,4 @@
-// components/home/Hero.js - Combined with Navbar
+// components/home/Hero.tsx - Combined with Navbar
 "use client";
 
 import Image from "next/image";
@@ -34,7 +34,8 @@ export default function Hero() {
     setCurrentHash(window.location.hash);
   }, [pathname]);
 
-  const handleHashLinkClick = (e, href) => {
+  // ✅ Fixed: added types for e and href
+  const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const sectionId = href.replace('#', '');
     if (pathname === '/') {
@@ -50,7 +51,8 @@ export default function Hero() {
     setMobileMenuOpen(false);
   };
 
-  const isActive = (href) => {
+  // ✅ Fixed: added type for href
+  const isActive = (href: string) => {
     if (href === '/') return pathname === '/' && currentHash === '';
     if (href === '/about') return pathname === '/about';
     if (href === '/project') return pathname === '/project';
@@ -60,14 +62,16 @@ export default function Hero() {
     return false;
   };
 
-  const linkClasses = (href) => {
+  // ✅ Fixed: added type for href
+  const linkClasses = (href: string) => {
     const active = isActive(href);
     return `relative font-medium transition-all duration-300 ${
-    active ? 'text-[#7B3FE4]' : 'text-[#333333] hover:text-[#7B3FE4]'
+      active ? 'text-[#7B3FE4]' : 'text-[#333333] hover:text-[#7B3FE4]'
     }`;
   };
 
-  const underlineClasses = (href) => {
+  // ✅ Fixed: added type for href
+  const underlineClasses = (href: string) => {
     const active = isActive(href);
     return `absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#7B3FE4] to-[#8D54FF] transition-all duration-300 ${
       active ? 'w-full' : 'w-0 group-hover:w-full'
