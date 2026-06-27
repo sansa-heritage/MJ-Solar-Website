@@ -331,8 +331,7 @@ export default function Hero() {
               {/* RIGHT SIDE */}
               <div className="relative flex justify-center items-center order-1 lg:order-2">
                 {/* Floating stats card stays unchanged */}
-<div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right">                  {/* ROW 1 */}
-                  <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
+<div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right mt-40">                  <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
                       <img
                         src="./images/aboutHero/temaki_power.svg"
