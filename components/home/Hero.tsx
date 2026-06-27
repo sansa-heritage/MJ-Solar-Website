@@ -367,7 +367,7 @@ export default function Hero() {
                         className="w-6 h-6 md:w-7 md:h-7 object-contain"
                         style={{
                           filter:
-                            "brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)",
+                            "brightness(100%) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(100%) contrast(100%)",
                         }}
                       />
                     </div>
@@ -392,7 +392,7 @@ export default function Hero() {
                         className="w-6 h-6 md:w-7 md:h-7 object-contain"
                         style={{
                           filter:
-                            "brightness(0) saturate(100%) invert(59%) sepia(84%) saturate(2159%) hue-rotate(12deg) brightness(102%) contrast(93%)",
+                            "brightness(100%) saturate(100%) invert(59%) sepia(84%) saturate(2159%) hue-rotate(12deg) brightness(102%) contrast(100%)",
                         }}
                       />
                     </div>
@@ -414,7 +414,7 @@ export default function Hero() {
                         className="w-6 h-6 md:w-7 md:h-7 object-contain"
                         style={{
                           filter:
-                            "brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)",
+                            "brightness(100%) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(100%) contrast(100%)",
                         }}
                       />
                     </div>
