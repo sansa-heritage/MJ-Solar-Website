@@ -17,30 +17,37 @@ export default function Hero() {
   const router = useRouter();
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = '918280508088';
-    const message = 'Hi MAA JOGOMAYA ENERGY, I want to know more about solar solutions.';
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    const phoneNumber = "918280508088";
+    const message =
+      "Hi MAA JOGOMAYA ENERGY, I want to know more about solar solutions.";
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank",
+    );
   };
 
   useEffect(() => {
     const handleHashChange = () => setCurrentHash(window.location.hash);
     setCurrentHash(window.location.hash);
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   useEffect(() => {
     setCurrentHash(window.location.hash);
   }, [pathname]);
 
-  const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleHashLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
-    const sectionId = href.replace('#', '');
-    if (pathname === '/') {
+    const sectionId = href.replace("#", "");
+    if (pathname === "/") {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        window.history.pushState(null, '', href);
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", href);
         setCurrentHash(href);
       }
     } else {
@@ -50,11 +57,11 @@ export default function Hero() {
   };
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/' && currentHash === '';
-    if (href === '/about') return pathname === '/about';
-    if (href === '/project') return pathname === '/project';
-    if (href === '#services' || href === '#contact') {
-      return pathname === '/' && currentHash === href;
+    if (href === "/") return pathname === "/" && currentHash === "";
+    if (href === "/about") return pathname === "/about";
+    if (href === "/project") return pathname === "/project";
+    if (href === "#services" || href === "#contact") {
+      return pathname === "/" && currentHash === href;
     }
     return false;
   };
@@ -62,14 +69,14 @@ export default function Hero() {
   const linkClasses = (href: string) => {
     const active = isActive(href);
     return `relative font-medium transition-all duration-300 ${
-      active ? 'text-[#7B3FE4]' : 'text-[#333333] hover:text-[#7B3FE4]'
+      active ? "text-[#7B3FE4]" : "text-[#333333] hover:text-[#7B3FE4]"
     }`;
   };
 
   const underlineClasses = (href: string) => {
     const active = isActive(href);
     return `absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#7B3FE4] to-[#8D54FF] transition-all duration-300 ${
-      active ? 'w-full' : 'w-0 group-hover:w-full'
+      active ? "w-full" : "w-0 group-hover:w-full"
     }`;
   };
 
@@ -106,33 +113,36 @@ export default function Hero() {
             </Link>
 
             <nav className="hidden lg:flex items-center gap-6 xl:gap-10 font-medium">
-              <Link href="/" className={`${linkClasses('/')} group`}>
+              <Link href="/" className={`${linkClasses("/")} group`}>
                 Home
-                <span className={underlineClasses('/')}></span>
+                <span className={underlineClasses("/")}></span>
               </Link>
-              <Link href="/about" className={`${linkClasses('/about')} group`}>
+              <Link href="/about" className={`${linkClasses("/about")} group`}>
                 About Us
-                <span className={underlineClasses('/about')}></span>
+                <span className={underlineClasses("/about")}></span>
               </Link>
               <a
                 href="#services"
-                onClick={(e) => handleHashLinkClick(e, '#services')}
-                className={`${linkClasses('#services')} group cursor-pointer`}
+                onClick={(e) => handleHashLinkClick(e, "#services")}
+                className={`${linkClasses("#services")} group cursor-pointer`}
               >
                 Services
-                <span className={underlineClasses('#services')}></span>
+                <span className={underlineClasses("#services")}></span>
               </a>
-              <Link href="/project" className={`${linkClasses('/project')} group`}>
+              <Link
+                href="/project"
+                className={`${linkClasses("/project")} group`}
+              >
                 Projects
-                <span className={underlineClasses('/project')}></span>
+                <span className={underlineClasses("/project")}></span>
               </Link>
               <a
                 href="#contact"
-                onClick={(e) => handleHashLinkClick(e, '#contact')}
-                className={`${linkClasses('#contact')} group cursor-pointer`}
+                onClick={(e) => handleHashLinkClick(e, "#contact")}
+                className={`${linkClasses("#contact")} group cursor-pointer`}
               >
                 Contact
-                <span className={underlineClasses('#contact')}></span>
+                <span className={underlineClasses("#contact")}></span>
               </a>
             </nav>
 
@@ -157,9 +167,9 @@ export default function Hero() {
               <Link
                 href="/"
                 className={`py-2 px-3 rounded-lg transition ${
-                  isActive('/')
-                    ? 'bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold'
-                    : 'hover:bg-gray-50 text-[#15153D]'
+                  isActive("/")
+                    ? "bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold"
+                    : "hover:bg-gray-50 text-[#15153D]"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -168,9 +178,9 @@ export default function Hero() {
               <Link
                 href="/about"
                 className={`py-2 px-3 rounded-lg transition ${
-                  isActive('/about')
-                    ? 'bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold'
-                    : 'hover:bg-gray-50 text-[#15153D]'
+                  isActive("/about")
+                    ? "bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold"
+                    : "hover:bg-gray-50 text-[#15153D]"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -179,13 +189,13 @@ export default function Hero() {
               <a
                 href="#services"
                 onClick={(e) => {
-                  handleHashLinkClick(e, '#services');
+                  handleHashLinkClick(e, "#services");
                   setMobileMenuOpen(false);
                 }}
                 className={`py-2 px-3 rounded-lg transition ${
-                  isActive('#services')
-                    ? 'bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold'
-                    : 'hover:bg-gray-50 text-[#15153D]'
+                  isActive("#services")
+                    ? "bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold"
+                    : "hover:bg-gray-50 text-[#15153D]"
                 }`}
               >
                 Services
@@ -193,9 +203,9 @@ export default function Hero() {
               <Link
                 href="/project"
                 className={`py-2 px-3 rounded-lg transition ${
-                  isActive('/project')
-                    ? 'bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold'
-                    : 'hover:bg-gray-50 text-[#15153D]'
+                  isActive("/project")
+                    ? "bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold"
+                    : "hover:bg-gray-50 text-[#15153D]"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -204,13 +214,13 @@ export default function Hero() {
               <a
                 href="#contact"
                 onClick={(e) => {
-                  handleHashLinkClick(e, '#contact');
+                  handleHashLinkClick(e, "#contact");
                   setMobileMenuOpen(false);
                 }}
                 className={`py-2 px-3 rounded-lg transition ${
-                  isActive('#contact')
-                    ? 'bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold'
-                    : 'hover:bg-gray-50 text-[#15153D]'
+                  isActive("#contact")
+                    ? "bg-[#7B3FE4]/10 text-[#7B3FE4] font-semibold"
+                    : "hover:bg-gray-50 text-[#15153D]"
                 }`}
               >
                 Contact
@@ -232,8 +242,9 @@ export default function Hero() {
         {/* ====== HERO CONTENT ====== */}
         <div className="flex-1 flex items-center justify-center relative z-10">
           <div className="w-full container-main py-6 md:py-8 lg:py-10">
-            <div className={`flex flex-col lg:flex-row lg:grid lg:grid-cols-2 items-center gap-8 lg:gap-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              
+            <div
+              className={`flex flex-col lg:flex-row lg:grid lg:grid-cols-2 items-center gap-8 lg:gap-2 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            >
               {/* LEFT CONTENT */}
               <div className="relative z-10 text-center lg:text-left order-2 lg:order-1">
                 <div className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full bg-white/90 backdrop-blur-sm border border-white/30 shadow-sm text-[11px] md:text-[13px] font-medium text-[#555] transition-all duration-300 hover:shadow-lg hover:border-[#7B3FE4]/30 hover:scale-[1.02] animate-fade-in">
@@ -276,8 +287,10 @@ export default function Hero() {
                     }
                     className="h-[44px] md:h-[52px] px-5 md:px-7 rounded-full bg-[#6544A6] text-white font-semibold text-[14px] md:text-[16px] shadow-md flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.05] active:scale-[0.95] group"
                   >
-                    Get Free Consultation 
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    Get Free Consultation
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
                   </button>
                   <button
                     onClick={() => setIsCalculatorOpen(true)}
@@ -297,11 +310,23 @@ export default function Hero() {
                 {/* ✅ IMPROVED FEATURE BAR – Taller, larger icons, better spacing */}
                 <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-sm rounded-[18px] shadow-md border border-white/30 py-3 md:py-4 px-4 md:px-6 flex flex-nowrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6  w-full">
                   {[
-                    { icon: "/images/hero/icon-park-solid_protect.svg", title: "Govt Approved", desc: "MNRE approved installer" },
-                    { icon: "/images/hero/streamline-flex_warranty-badge-highlight-solid.svg", title: "25 Years Warranty", desc: "Long-lasting performance" },
-                    { icon: "/images/hero/mdi_user-tie.svg", title: "1000+ Clients", desc: "Serving happy customers" }
+                    {
+                      icon: "/images/hero/icon-park-solid_protect.svg",
+                      title: "Govt Approved",
+                      desc: "MNRE approved installer",
+                    },
+                    {
+                      icon: "/images/hero/streamline-flex_warranty-badge-highlight-solid.svg",
+                      title: "25 Years Warranty",
+                      desc: "Long-lasting performance",
+                    },
+                    {
+                      icon: "/images/hero/mdi_user-tie.svg",
+                      title: "1000+ Clients",
+                      desc: "Serving happy customers",
+                    },
                   ].map((item, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="flex items-center gap-2 sm:gap-3 transition-all duration-300 hover:scale-105 hover:bg-white/10 rounded-lg px-3 py-2 flex-shrink-0"
                       style={{ animationDelay: `${(index + 1) * 150}ms` }}
@@ -329,21 +354,33 @@ export default function Hero() {
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="relative flex justify-center items-center order-1 lg:order-2">
-                {/* Floating stats card stays unchanged */}
-<div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right mt-40">                  <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
+              {/* RIGHT SIDE */}
+              <div className="relative flex justify-center items-center order-1 lg:order-2 min-h-[200px] lg:min-h-[200px]">
+                {/* Floating stats card – more transparent, positioned with top % */}
+                <div className="absolute top-[32%] right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/10 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right">
+                  {/* ROW 1 */}
+                  <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
                       <img
                         src="./images/aboutHero/temaki_power.svg"
                         alt="Power Icon"
                         className="w-6 h-6 md:w-7 md:h-7 object-contain"
-                        style={{ filter: 'brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)' }}
+                        style={{
+                          filter:
+                            "brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)",
+                        }}
                       />
                     </div>
                     <div>
-                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">Save up to</p>
-                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight animate-pulse-subtle">90%</h3>
-                      <p className="text-black/70 text-[10px] md:text-[11px]">on Electricity Bills</p>
+                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">
+                        Save up to
+                      </p>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight animate-pulse-subtle">
+                        90%
+                      </h3>
+                      <p className="text-black/70 text-[10px] md:text-[11px]">
+                        on Electricity Bills
+                      </p>
                     </div>
                   </div>
                   {/* ROW 2 */}
@@ -353,12 +390,19 @@ export default function Hero() {
                         src="./images/aboutHero/famicons_calendar-outline.svg"
                         alt="Calendar"
                         className="w-6 h-6 md:w-7 md:h-7 object-contain"
-                        style={{ filter: 'brightness(0) saturate(100%) invert(59%) sepia(84%) saturate(2159%) hue-rotate(12deg) brightness(102%) contrast(93%)' }}
+                        style={{
+                          filter:
+                            "brightness(0) saturate(100%) invert(59%) sepia(84%) saturate(2159%) hue-rotate(12deg) brightness(102%) contrast(93%)",
+                        }}
                       />
                     </div>
                     <div>
-                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">Payback in</p>
-                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight">3-4 Years</h3>
+                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">
+                        Payback in
+                      </p>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight">
+                        3-4 Years
+                      </h3>
                     </div>
                   </div>
                   {/* ROW 3 */}
@@ -368,13 +412,22 @@ export default function Hero() {
                         src="./images/aboutHero/streamline-plump_wallet.svg"
                         alt="Wallet"
                         className="w-6 h-6 md:w-7 md:h-7 object-contain"
-                        style={{ filter: 'brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)' }}
+                        style={{
+                          filter:
+                            "brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)",
+                        }}
                       />
                     </div>
                     <div>
-                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">Earn up to</p>
-                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight">₹1.5L+</h3>
-                      <p className="text-black/70 text-[10px] md:text-[11px]">Lifetime Savings</p>
+                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">
+                        Earn up to
+                      </p>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight">
+                        ₹1.5L+
+                      </h3>
+                      <p className="text-black/70 text-[10px] md:text-[11px]">
+                        Lifetime Savings
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -391,50 +444,117 @@ export default function Hero() {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
         }
         @keyframes pulse-slow {
-          0%, 100% { opacity: 0.5; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.1); }
+          0%,
+          100% {
+            opacity: 0.5;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.1);
+          }
         }
         @keyframes gradient-shift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         @keyframes slide-up {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         @keyframes slide-in-right {
-          from { opacity: 0; transform: translateX(50px); }
-          to { opacity: 1; transform: translateX(0); }
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
         @keyframes pulse-subtle {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.02); }
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.02);
+          }
         }
         @keyframes spin-slow {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to { transform: translate(-50%, -50%) rotate(360deg); }
+          from {
+            transform: translate(-50%, -50%) rotate(0deg);
+          }
+          to {
+            transform: translate(-50%, -50%) rotate(360deg);
+          }
         }
 
-        .animate-float { animation: float 4s ease-in-out infinite; }
-        .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
-        .animate-gradient-shift { animation: gradient-shift 5s ease-in-out infinite; }
-        .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
-        .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
-        .animate-slide-in-right { animation: slide-in-right 0.8s ease-out forwards; }
-        .animate-pulse-subtle { animation: pulse-subtle 3s ease-in-out infinite; }
-        .animate-spin-slow { animation: spin-slow 30s linear infinite; }
-        .animation-delay-200 { animation-delay: 200ms; }
-        .animation-delay-400 { animation-delay: 400ms; }
-        .delay-1000 { animation-delay: 1000ms; }
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 6s ease-in-out infinite;
+        }
+        .animate-gradient-shift {
+          animation: gradient-shift 5s ease-in-out infinite;
+        }
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out forwards;
+        }
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out forwards;
+        }
+        .animate-slide-in-right {
+          animation: slide-in-right 0.8s ease-out forwards;
+        }
+        .animate-pulse-subtle {
+          animation: pulse-subtle 3s ease-in-out infinite;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 30s linear infinite;
+        }
+        .animation-delay-200 {
+          animation-delay: 200ms;
+        }
+        .animation-delay-400 {
+          animation-delay: 400ms;
+        }
+        .delay-1000 {
+          animation-delay: 1000ms;
+        }
       `}</style>
     </>
   );
