@@ -261,7 +261,7 @@ export default function Hero() {
                   </span>
                 </h1>
 
-                <p className="mt-4 md:mt-8 text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-[#000000]/90 max-w-[650px] mx-auto lg:mx-0 animate-slide-up animation-delay-200">
+                <p className="mt-4 md:mt-8 text-[28px] md:text-[28px] leading-[28px] md:leading-[32px] text-[#000000]/90 max-w-[650px] mx-auto lg:mx-0 animate-slide-up animation-delay-200">
                   Save up to ₹1,38,000 with Government Subsidy and reduce your
                   electricity bill by up to 90%.
                 </p>
@@ -295,7 +295,7 @@ export default function Hero() {
                 </div>
 
                 {/* ✅ IMPROVED FEATURE BAR – Taller, larger icons, better spacing */}
-                <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-sm rounded-[18px] shadow-md border border-white/30 py-3 md:py-4 px-4 md:px-6 flex flex-nowrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 overflow-x-auto w-full">
+                <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-sm rounded-[18px] shadow-md border border-white/30 py-3 md:py-4 px-4 md:px-6 flex flex-nowrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6  w-full">
                   {[
                     { icon: "/images/hero/icon-park-solid_protect.svg", title: "Govt Approved", desc: "MNRE approved installer" },
                     { icon: "/images/hero/streamline-flex_warranty-badge-highlight-solid.svg", title: "25 Years Warranty", desc: "Long-lasting performance" },
@@ -331,7 +331,7 @@ export default function Hero() {
               {/* RIGHT SIDE */}
               <div className="relative flex justify-center items-center order-1 lg:order-2">
                 {/* Floating stats card stays unchanged */}
-                <div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right">
+                <div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right mt-40">
                   {/* ROW 1 */}
                   <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
