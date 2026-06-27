@@ -80,7 +80,7 @@ export default function Hero() {
   return (
     <>
       <section
-        className="relative overflow-hidden pt-0 pb-10 md:pb-10 flex flex-col bg-cover bg-center bg-no-repeat"
+        className="relative overflow-hidden pt-0 flex flex-col bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/hero/background home 1.svg')" }}
       >
         <div className="absolute inset-0 bg-black/0 z-0"></div>
