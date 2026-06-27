@@ -231,8 +231,8 @@ export default function Hero() {
 
         {/* ====== HERO CONTENT ====== */}
         <div className="flex-1 flex items-center justify-center relative z-10">
-          <div className="Hero-Banner p-7 relative z-10 w-full">
-            <div className={`flex flex-col lg:flex-row lg:grid lg:grid-cols-2 items-center gap-8 lg:gap-2 py-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="w-full container-main py-6 md:py-8 lg:py-10">
+            <div className={`flex flex-col lg:flex-row lg:grid lg:grid-cols-2 items-center gap-8 lg:gap-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               
               {/* LEFT CONTENT */}
               <div className="relative z-10 text-center lg:text-left order-2 lg:order-1">
@@ -294,8 +294,8 @@ export default function Hero() {
                   </button>
                 </div>
 
-                {/* ✅ FIXED FEATURE BAR – Single row, no wrap, fully responsive */}
-                <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-sm rounded-[18px] shadow-md border border-white/30 py-2 px-3 sm:px-4 flex flex-nowrap items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 overflow-x-auto w-full">
+                {/* ✅ IMPROVED FEATURE BAR – Taller, larger icons, better spacing */}
+                <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-sm rounded-[18px] shadow-md border border-white/30 py-3 md:py-4 px-4 md:px-6 flex flex-nowrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 overflow-x-auto w-full">
                   {[
                     { icon: "/images/hero/icon-park-solid_protect.svg", title: "Govt Approved", desc: "MNRE approved installer" },
                     { icon: "/images/hero/streamline-flex_warranty-badge-highlight-solid.svg", title: "25 Years Warranty", desc: "Long-lasting performance" },
@@ -303,23 +303,23 @@ export default function Hero() {
                   ].map((item, index) => (
                     <div 
                       key={index}
-                      className="flex items-center gap-1.5 sm:gap-2 transition-all duration-300 hover:scale-105 hover:bg-white/10 rounded-lg px-2 py-1.5 flex-shrink-0"
+                      className="flex items-center gap-2 sm:gap-3 transition-all duration-300 hover:scale-105 hover:bg-white/10 rounded-lg px-3 py-2 flex-shrink-0"
                       style={{ animationDelay: `${(index + 1) * 150}ms` }}
                     >
-                      <div className="w-6 h-6 sm:w-7 md:w-8 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 sm:w-12 md:w-12 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-orange-200 hover:shadow-md">
                         <Image
                           src={item.icon}
                           alt={item.title}
-                          className="w-3.5 h-3.5 sm:w-4 md:w-5 object-contain"
-                          width={20}
-                          height={20}
+                          className="w-8 h-8 sm:w-5 md:w-6 object-contain"
+                          width={24}
+                          height={24}
                         />
                       </div>
                       <div className="text-[#000000] whitespace-nowrap">
-                        <h4 className="font-bold text-[10px] sm:text-xs md:text-sm leading-tight">
+                        <h4 className="font-bold text-[11px] sm:text-xs md:text-sm leading-tight">
                           {item.title}
                         </h4>
-                        <p className="text-[8px] sm:text-[10px] md:text-xs text-[#6B7280]/70 leading-tight">
+                        <p className="text-[9px] sm:text-[10px] md:text-xs text-[#6B7280]/70 leading-tight">
                           {item.desc}
                         </p>
                       </div>
@@ -330,53 +330,53 @@ export default function Hero() {
 
               {/* RIGHT SIDE */}
               <div className="relative flex justify-center items-center order-1 lg:order-2">
-                {/* Image removed, only stats card remains */}
-                <div className="absolute top-1/2 -translate-y-1/2 right-2 lg:right-6 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right mr-25 mt-20">
+                {/* Floating stats card stays unchanged */}
+                <div className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-4 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right">
                   {/* ROW 1 */}
                   <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
-                    <div className="w-15 h-15 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
                       <img
                         src="./images/aboutHero/temaki_power.svg"
                         alt="Power Icon"
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 md:w-7 md:h-7 object-contain"
                         style={{ filter: 'brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)' }}
                       />
                     </div>
-                    <div className="text-white">
-                      <p className="text-[#000000]/100 text-[17px] font-medium">Save up to</p>
-                      <h3 className="text-[28px] font-bold text-[#452BCA] leading-tight animate-pulse-subtle">90%</h3>
-                      <p className="text-[#000000]/100 text-[12px]">on Electricity Bills</p>
+                    <div>
+                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">Save up to</p>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight animate-pulse-subtle">90%</h3>
+                      <p className="text-black/70 text-[10px] md:text-[11px]">on Electricity Bills</p>
                     </div>
                   </div>
                   {/* ROW 2 */}
                   <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
-                    <div className="w-15 h-15 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
                       <img
                         src="./images/aboutHero/famicons_calendar-outline.svg"
                         alt="Calendar"
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 md:w-7 md:h-7 object-contain"
                         style={{ filter: 'brightness(0) saturate(100%) invert(59%) sepia(84%) saturate(2159%) hue-rotate(12deg) brightness(102%) contrast(93%)' }}
                       />
                     </div>
-                    <div className="text-white">
-                      <p className="text-[#000000]/100 text-[17px] font-medium">Payback in</p>
-                      <h3 className="text-[28px] font-bold text-[#452BCA] leading-tight">3-4 Years</h3>
+                    <div>
+                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">Payback in</p>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight">3-4 Years</h3>
                     </div>
                   </div>
                   {/* ROW 3 */}
                   <div className="flex items-center gap-3 px-4 py-4 transition-all duration-300 hover:bg-white/10">
-                    <div className="w-15 h-15 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
                       <img
                         src="./images/aboutHero/streamline-plump_wallet.svg"
                         alt="Wallet"
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 md:w-7 md:h-7 object-contain"
                         style={{ filter: 'brightness(0) saturate(100%) invert(29%) sepia(82%) saturate(1452%) hue-rotate(249deg) brightness(97%) contrast(88%)' }}
                       />
                     </div>
-                    <div className="text-white">
-                      <p className="text-[#000000]/100 text-[17px] font-medium">Earn up to</p>
-                      <h3 className="text-[28px] font-bold text-[#452BCA] leading-tight">₹1.5L+</h3>
-                      <p className="text-[#000000]/100 text-[12px]">Lifetime Savings</p>
+                    <div>
+                      <p className="text-black/80 text-[14px] md:text-[16px] font-medium">Earn up to</p>
+                      <h3 className="text-[24px] md:text-[28px] font-bold text-[#452BCA] leading-tight">₹1.5L+</h3>
+                      <p className="text-black/70 text-[10px] md:text-[11px]">Lifetime Savings</p>
                     </div>
                   </div>
                 </div>
