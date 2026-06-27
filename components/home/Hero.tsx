@@ -281,7 +281,7 @@ export default function Hero() {
                   </button>
                   <button
                     onClick={() => setIsCalculatorOpen(true)}
-                    className="h-[44px] md:h-[52px] px-5 md:px-7 rounded-full bg-white/90 backdrop-blur-sm border border-white text-[#15153D] font-semibold text-[14px] md:text-[16px] shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 hover:shadow-md hover:bg-white active:scale-[0.95] group"
+                    className="h-[44px] md:h-[52px] px-5 md:px-7 rounded-full bg-white/90 backdrop-blur-sm border border-[#000000] text-[#15153D] font-semibold text-[14px] md:text-[16px] shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 hover:shadow-md hover:bg-white active:scale-[0.95] group"
                   >
                     Calculate Savings
                     <Image
