@@ -16,7 +16,6 @@ export default function Hero() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // --- Navbar logic ---
   const handleWhatsAppClick = () => {
     const phoneNumber = '918280508088';
     const message = 'Hi MAA JOGOMAYA ENERGY, I want to know more about solar solutions.';
@@ -34,7 +33,6 @@ export default function Hero() {
     setCurrentHash(window.location.hash);
   }, [pathname]);
 
-  // ✅ Fixed: added types for e and href
   const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const sectionId = href.replace('#', '');
@@ -51,7 +49,6 @@ export default function Hero() {
     setMobileMenuOpen(false);
   };
 
-  // ✅ Fixed: added type for href
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/' && currentHash === '';
     if (href === '/about') return pathname === '/about';
@@ -62,7 +59,6 @@ export default function Hero() {
     return false;
   };
 
-  // ✅ Fixed: added type for href
   const linkClasses = (href: string) => {
     const active = isActive(href);
     return `relative font-medium transition-all duration-300 ${
@@ -70,7 +66,6 @@ export default function Hero() {
     }`;
   };
 
-  // ✅ Fixed: added type for href
   const underlineClasses = (href: string) => {
     const active = isActive(href);
     return `absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#7B3FE4] to-[#8D54FF] transition-all duration-300 ${
@@ -78,7 +73,6 @@ export default function Hero() {
     }`;
   };
 
-  // --- Hero visibility ---
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -86,23 +80,20 @@ export default function Hero() {
   return (
     <>
       <section
-        className="relative overflow-hidden pt-0 pb-10 md:pb-10 min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+        className="relative overflow-hidden pt-0 pb-10 md:pb-10 flex flex-col bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/hero/background home 1.svg')" }}
       >
-        {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/0 z-0"></div>
 
-        {/* Animated Background Elements (optional, can be kept or removed) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-[#7B3FE4]/10 animate-pulse-slow"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-[#EA6301]/10 animate-pulse-slow delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#7B3FE4]/[0.03] animate-spin-slow"></div>
         </div>
 
-        {/* ====== NAVBAR (integrated) ====== */}
-        <header className="w-full py-4 md:py-5 sticky top-0 bg-transparent backdrop-blur-sm z-50">
+        {/* ====== NAVBAR ====== */}
+        <header className="w-full py-3 md:py-4 sticky top-0 bg-transparent backdrop-blur-sm z-50">
           <div className="container-main flex items-center justify-between">
-            {/* LOGO */}
             <Link href="/" className="flex items-center gap-2 md:gap-3">
               <Image
                 src="/images/logo/Logo 1.svg"
@@ -114,7 +105,6 @@ export default function Hero() {
               />
             </Link>
 
-            {/* DESKTOP MENU */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-10 font-medium">
               <Link href="/" className={`${linkClasses('/')} group`}>
                 Home
@@ -146,7 +136,6 @@ export default function Hero() {
               </a>
             </nav>
 
-            {/* RIGHT SECTION */}
             <div className="flex items-center gap-3 md:gap-4">
               <button
                 onClick={handleWhatsAppClick}
@@ -163,7 +152,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* MOBILE MENU DROPDOWN */}
           {mobileMenuOpen && (
             <div className="lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl shadow-xl py-4 px-4 flex flex-col gap-3 z-50">
               <Link
@@ -244,11 +232,10 @@ export default function Hero() {
         {/* ====== HERO CONTENT ====== */}
         <div className="flex-1 flex items-center justify-center relative z-10">
           <div className="Hero-Banner p-7 relative z-10 w-full">
-            <div className={`flex flex-col lg:flex-row lg:grid lg:grid-cols-2 items-center gap-8 lg:gap-2 py-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`flex flex-col lg:flex-row lg:grid lg:grid-cols-2 items-center gap-8 lg:gap-2 py-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               
               {/* LEFT CONTENT */}
               <div className="relative z-10 text-center lg:text-left order-2 lg:order-1">
-                {/* BADGE – updated background for visibility on dark bg */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full bg-white/90 backdrop-blur-sm border border-white/30 shadow-sm text-[11px] md:text-[13px] font-medium text-[#555] transition-all duration-300 hover:shadow-lg hover:border-[#7B3FE4]/30 hover:scale-[1.02] animate-fade-in">
                   <Image
                     src="/images/hero/electric_bolt.png"
@@ -267,21 +254,18 @@ export default function Hero() {
                   />
                 </div>
 
-                {/* TITLE – white text */}
                 <h1 className="mt-6 md:mt-8 text-[32px] sm:text-[44px] md:text-[56px] leading-[1.2] md:leading-[62px] font-bold text-[#111827] animate-slide-up">
                   PM Surya Ghar:
-                  <span className="block bg-gradient-to-r from-[#EA6301] to-[#FFB347] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
+                  <span className="block bg-gradient-to-r from-[#EA6301] to-[#544795] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
                     Muft Bijli Yojana
                   </span>
                 </h1>
 
-                {/* DESCRIPTION – white */}
                 <p className="mt-4 md:mt-8 text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-[#000000]/90 max-w-[650px] mx-auto lg:mx-0 animate-slide-up animation-delay-200">
                   Save up to ₹1,38,000 with Government Subsidy and reduce your
                   electricity bill by up to 90%.
                 </p>
 
-                {/* BUTTONS */}
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6 md:mt-8 animate-slide-up animation-delay-400">
                   <button
                     onClick={() =>
@@ -310,8 +294,8 @@ export default function Hero() {
                   </button>
                 </div>
 
-                {/* FEATURE BAR – transparent with blur */}
-                <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-md rounded-[20px] shadow-md border border-white/30 p-4 md:p-5 flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 max-w-[800] mx-auto lg:mx-0">
+                {/* ✅ FIXED FEATURE BAR – Single row, no wrap, fully responsive */}
+                <div className="mt-6 md:mt-10 bg-white/90 backdrop-blur-sm rounded-[18px] shadow-md border border-white/30 py-2 px-3 sm:px-4 flex flex-nowrap items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 overflow-x-auto w-full">
                   {[
                     { icon: "/images/hero/icon-park-solid_protect.svg", title: "Govt Approved", desc: "MNRE approved installer" },
                     { icon: "/images/hero/streamline-flex_warranty-badge-highlight-solid.svg", title: "25 Years Warranty", desc: "Long-lasting performance" },
@@ -319,23 +303,23 @@ export default function Hero() {
                   ].map((item, index) => (
                     <div 
                       key={index}
-                      className="flex items-center gap-2 md:gap-3 transition-all duration-300 hover:scale-[1.05] hover:bg-white/10 rounded-lg p-2"
+                      className="flex items-center gap-1.5 sm:gap-2 transition-all duration-300 hover:scale-105 hover:bg-white/10 rounded-lg px-2 py-1.5 flex-shrink-0"
                       style={{ animationDelay: `${(index + 1) * 150}ms` }}
                     >
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-100 flex items-center justify-center text-sm md:text-base shrink-0 transition-all duration-300 hover:bg-orange-200 hover:shadow-md">
+                      <div className="w-6 h-6 sm:w-7 md:w-8 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
                         <Image
                           src={item.icon}
                           alt={item.title}
-                          className="w-5 h-5 md:w-6 md:h-6 object-contain"
-                          width={24}
-                          height={24}
+                          className="w-3.5 h-3.5 sm:w-4 md:w-5 object-contain"
+                          width={20}
+                          height={20}
                         />
                       </div>
-                      <div className="text-[#000000]">
-                        <h4 className="font-bold text-[13px] md:text-[16px]">
+                      <div className="text-[#000000] whitespace-nowrap">
+                        <h4 className="font-bold text-[10px] sm:text-xs md:text-sm leading-tight">
                           {item.title}
                         </h4>
-                        <p className="text-[11px] md:text-[13px] text-[#6B7280]/70">
+                        <p className="text-[8px] sm:text-[10px] md:text-xs text-[#6B7280]/70 leading-tight">
                           {item.desc}
                         </p>
                       </div>
@@ -344,21 +328,10 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* RIGHT SIDE - Image with Float */}
+              {/* RIGHT SIDE */}
               <div className="relative flex justify-center items-center order-1 lg:order-2">
-                {/* <div className="relative z-10 w-full max-w-[500px] md:max-w-[650px] animate-float">
-                  <Image
-                    src="/images/hero/solar_power.png"
-                    alt="solar"
-                    width={700}
-                    height={700}
-                    className="object-contain w-full h-auto drop-shadow-2xl"
-                    priority
-                  />
-                </div> */}
-
-                {/* FLOATING STATS CARD – now with higher contrast */}
-                <div className="absolute top-1/2 -translate-y-1/2 right-2 lg:right-6 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right mr-25 mt-40">
+                {/* Image removed, only stats card remains */}
+                <div className="absolute top-1/2 -translate-y-1/2 right-2 lg:right-6 z-20 w-[190px] md:w-[220px] bg-white/20 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/30 overflow-hidden hidden md:block animate-slide-in-right mr-25 mt-20">
                   {/* ROW 1 */}
                   <div className="flex items-center gap-3 px-4 py-4 border-b border-white/20 transition-all duration-300 hover:bg-white/10">
                     <div className="w-15 h-15 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
